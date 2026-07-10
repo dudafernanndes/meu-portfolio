@@ -161,7 +161,7 @@ const certificates = [
         file: "assets/certificates/cybersecurity.pdf"
     },
     {
-        title: "Certificado Chatbot",
+        title: "Certificado Chatbots",
         image: "assets/images/certificates/chatbot.webp",
         file: "assets/certificates/chatbot.pdf"
     }
