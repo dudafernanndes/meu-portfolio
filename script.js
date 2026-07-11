@@ -8,26 +8,6 @@ const projects = [
         liveUrl: "https://trip-red.vercel.app/",
         githubUrl: "https://github.com/CHAT-TRIP/TRIP"
     },
-
-    {
-        title: "LaserFlow IA",
-        description:
-            "Plataforma voltada ao cadastro e à busca de consultoras especializadas, com filtros por cidade, estado, profissão e especialidade. Desenvolvimento de interface, integração com API e banco de dados.",
-        image: "assets/images/projeto-laserflow.webp",
-        imageAlt: "Imagem do projeto LaserFlow IA",
-        liveUrl: "",
-        githubUrl: ""
-    },
-
-    {
-        title: "Projeto Front-End",
-        description:
-            "Aplicação web responsiva desenvolvida com foco em experiência do usuário, acessibilidade, organização visual e integração com serviços externos.",
-        image: "assets/images/projeto-frontend.webp",
-        imageAlt: "Imagem de projeto front-end",
-        liveUrl: "",
-        githubUrl: ""
-    }
 ];
 
 let currentProjectIndex = 0;
