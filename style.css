@@ -1163,7 +1163,9 @@ section{
     letter-spacing:-2px;
 }
 
-/* CARROSSEL */
+/* =========================
+   CARROSSEL DE CERTIFICADOS
+========================= */
 
 .certificates-carousel{
     display:grid;
@@ -1176,7 +1178,11 @@ section{
     min-width:0;
 
     display:grid;
-    grid-template-columns:minmax(0, .82fr) minmax(0, 1.05fr) minmax(0, .82fr);
+    grid-template-columns:
+        minmax(0, .82fr)
+        minmax(0, 1.05fr)
+        minmax(0, .82fr);
+
     align-items:center;
     gap:34px;
 }
@@ -1228,7 +1234,9 @@ section{
     transform:translateY(-8px) scale(1.02);
 }
 
-/* SETAS */
+/* =========================
+   SETAS DOS CERTIFICADOS
+========================= */
 
 .certificate-arrow{
     width:56px;
@@ -1263,56 +1271,167 @@ section{
     outline-offset:5px;
 }
 
-/* TECNOLOGIAS */
+/* =========================
+   CARROSSEL DE TECNOLOGIAS
+========================= */
 
-.technologies{
-    margin-top:110px;
+.technologies-carousel{
+    position:relative;
+
+    width:100%;
+    margin-top:100px;
+    padding:20px 0 30px;
+
+    overflow:hidden;
+}
+
+/* Efeito de desaparecimento nas laterais */
+
+.technologies-carousel::before,
+.technologies-carousel::after{
+    content:"";
+
+    position:absolute;
+    top:0;
+    bottom:0;
+
+    width:110px;
+
+    z-index:2;
+    pointer-events:none;
+}
+
+.technologies-carousel::before{
+    left:0;
+
+    background:linear-gradient(
+        90deg,
+        #000 0%,
+        rgba(0,0,0,.9) 35%,
+        transparent 100%
+    );
+}
+
+.technologies-carousel::after{
+    right:0;
+
+    background:linear-gradient(
+        270deg,
+        #000 0%,
+        rgba(0,0,0,.9) 35%,
+        transparent 100%
+    );
+}
+
+.technologies-track{
+    width:max-content;
 
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    gap:35px;
+    gap:75px;
+
+    animation:technology-scroll 28s linear infinite;
 }
 
-.technologies i{
-    font-size:86px;
+/* Pausa ao passar o mouse */
+
+.technologies-carousel:hover .technologies-track{
+    animation-play-state:paused;
+}
+
+.technology-item{
+    width:115px;
+    flex-shrink:0;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+
+    color:#fff;
 
     transition:
         transform .25s ease,
         filter .25s ease;
 }
 
-.technologies i:hover{
-    transform:translateY(-8px) scale(1.05);
+.technology-item:hover{
+    transform:translateY(-8px) scale(1.06);
     filter:brightness(1.15);
 }
 
-.technologies .devicon-nodejs-plain-wordmark{
+.technology-item i{
+    font-size:88px;
+}
+
+.technology-item span{
+    color:#d8d8d8;
+
+    font-size:15px;
+    font-weight:500;
+
+    white-space:nowrap;
+}
+
+/* CORES DAS TECNOLOGIAS */
+
+.technology-item .devicon-nodejs-plain-wordmark{
     color:#68a063;
 }
 
-.technologies .devicon-git-plain{
+.technology-item .devicon-git-plain{
     color:#f05032;
 }
 
-.technologies .devicon-javascript-plain{
+.technology-item .devicon-javascript-plain{
     color:#f7df1e;
 }
 
-.technologies .devicon-nextjs-plain{
+.technology-item .devicon-nextjs-plain{
     color:#fff;
 }
 
-.technologies .devicon-html5-plain{
+.technology-item .devicon-html5-plain{
     color:#e34f26;
 }
 
-.technologies .devicon-react-original{
+.technology-item .devicon-react-original{
     color:#61dafb;
 }
 
-.technologies .devicon-css3-plain{
+.technology-item .devicon-css3-plain{
     color:#1572b6;
+}
+
+.technology-item .devicon-typescript-plain{
+    color:#3178c6;
+}
+
+.technology-item .devicon-java-plain{
+    color:#ed8b00;
+}
+
+.technology-item .devicon-python-plain{
+    color:#ffd43b;
+}
+
+.technology-item .devicon-oracle-original{
+    color:#f80000;
+}
+
+.technology-item .devicon-mysql-original{
+    color:#4479a1;
+}
+
+@keyframes technology-scroll{
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(calc(-50% - 37.5px));
+    }
 }
 
 /* =========================
@@ -1356,14 +1475,20 @@ section{
         font-size:24px;
     }
 
-    .technologies{
+    .technologies-carousel{
         margin-top:80px;
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:50px;
     }
 
-    .technologies i{
+    .technologies-track{
+        gap:55px;
+        animation-duration:24s;
+    }
+
+    .technology-item{
+        width:95px;
+    }
+
+    .technology-item i{
         font-size:70px;
     }
 }
@@ -1411,13 +1536,31 @@ section{
         font-size:22px;
     }
 
-    .technologies{
+    .technologies-carousel{
         margin-top:65px;
-        gap:35px;
     }
 
-    .technologies i{
+    .technologies-carousel::before,
+    .technologies-carousel::after{
+        width:60px;
+    }
+
+    .technologies-track{
+        gap:38px;
+        animation-duration:20s;
+    }
+
+    .technology-item{
+        width:78px;
+        gap:10px;
+    }
+
+    .technology-item i{
         font-size:56px;
+    }
+
+    .technology-item span{
+        font-size:13px;
     }
 }
 
@@ -1442,11 +1585,201 @@ section{
         font-size:20px;
     }
 
-    .technologies{
-        gap:28px;
+    .technologies-carousel{
+        margin-top:55px;
     }
 
-    .technologies i{
+    .technologies-track{
+        gap:28px;
+        animation-duration:18s;
+    }
+
+    .technology-item{
+        width:68px;
+    }
+
+    .technology-item i{
         font-size:48px;
+    }
+
+    .technology-item span{
+        font-size:12px;
+    }
+}
+
+/* =========================
+   CARROSSEL DE TECNOLOGIAS
+========================= */
+
+.technologies-carousel{
+    position:relative;
+
+    width:100%;
+    margin-top:105px;
+
+    overflow:hidden;
+
+    /* suaviza as bordas do carrossel */
+    -webkit-mask-image:linear-gradient(
+        to right,
+        transparent 0%,
+        #000 8%,
+        #000 92%,
+        transparent 100%
+    );
+
+    mask-image:linear-gradient(
+        to right,
+        transparent 0%,
+        #000 8%,
+        #000 92%,
+        transparent 100%
+    );
+}
+
+.technologies-track{
+    display:flex;
+    align-items:center;
+
+    width:max-content;
+
+    animation:technologies-scroll 35s linear infinite;
+
+    will-change:transform;
+}
+
+/* pausa quando passar o mouse */
+
+.technologies-carousel:hover .technologies-track{
+    animation-play-state:paused;
+}
+
+.technology-item{
+    width:160px;
+    height:110px;
+    margin:0 05px;
+
+    flex-shrink:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.technology-item img{
+    display:block;
+
+    width:100%;
+    height:100%;
+
+    max-width:110px;
+    max-height:90px;
+
+    object-fit:contain;
+
+    transition:
+        transform .3s ease,
+        filter .3s ease,
+        opacity .3s ease;
+}
+
+.technology-item:hover img{
+    transform:translateY(-8px) scale(1.08);
+    filter:brightness(1.15);
+}
+
+/* MOVIMENTO INFINITO */
+
+@keyframes technologies-scroll{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+/* =========================
+   TELAS MÉDIAS
+========================= */
+
+@media(max-width:1000px){
+
+    .technologies-carousel{
+        margin-top:80px;
+    }
+
+    .technologies-track{
+        animation-duration:30s;
+    }
+
+    .technology-item{
+        width:135px;
+        height:95px;
+        margin:0 20px;
+    }
+
+    .technology-item img{
+        max-width:92px;
+        max-height:75px;
+    }
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width:700px){
+
+    .technologies-carousel{
+        margin-top:65px;
+
+        -webkit-mask-image:linear-gradient(
+            to right,
+            transparent 0%,
+            #000 4%,
+            #000 96%,
+            transparent 100%
+        );
+
+        mask-image:linear-gradient(
+            to right,
+            transparent 0%,
+            #000 4%,
+            #000 96%,
+            transparent 100%
+        );
+    }
+
+    .technologies-track{
+        animation-duration:25s;
+    }
+
+    .technology-item{
+        width:105px;
+        height:80px;
+        margin:0 16px;
+    }
+
+    .technology-item img{
+        max-width:75px;
+        max-height:62px;
+    }
+}
+
+/* ACESSIBILIDADE:
+   remove a animação quando o usuário prefere menos movimento */
+
+@media(prefers-reduced-motion:reduce){
+
+    .technologies-track{
+        animation:none;
+    }
+
+    .technologies-carousel{
+        overflow-x:auto;
+        scrollbar-width:thin;
     }
 }
