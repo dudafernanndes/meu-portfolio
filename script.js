@@ -136,14 +136,34 @@ const certificates = [
         file: "assets/certificates/qualificação-profissional-II.pdf"
     },
     {
+        title: "Certificado HTML e CSS: Classes, Posicionamento e Flexbox",
+        image: "assets/images/certificates/htmlecssII.webp",
+        file: "assets/certificates/htmlecssII.pdf"
+    },
+    {
         title: "Certificado Cybersecurity",
         image: "assets/images/certificates/cybersecurity.webp",
         file: "assets/certificates/cybersecurity.pdf"
     },
     {
+        title: "Certificado Backend em Java",
+        image: "assets/images/certificates/backendjava.webp",
+        file: "assets/certificates/backendjava.pdf"
+    },
+    {
         title: "Certificado Chatbots",
         image: "assets/images/certificates/chatbot.webp",
         file: "assets/certificates/chatbot.pdf"
+    },
+    {
+        title: "Certificado Java",
+        image: "assets/images/certificates/java.webp",
+        file: "assets/certificates/java.pdf"
+    },
+    {
+        title: "Certificado HTML e CSS: Cabeçalho, Footer e Variáveis CSS",
+        image: "assets/images/certificates/htmlecss.webp",
+        file: "assets/certificates/htmlecss.pdf"
     }
 ];
 
