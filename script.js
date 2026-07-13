@@ -1,13 +1,34 @@
 const projects = [
+
     {
         title: "Assistente Virtual<br>TRIP - Motiva",
+
         description:
             "Participação no desenvolvimento do projeto TRIP, assistente virtual inteligente voltado à mobilidade urbana. Atuação no front-end da aplicação e apoio em testes e validação de funcionalidades. Projeto destaque no NEXT FIAP, conquistando o 2º lugar entre os melhores projetos da graduação.",
+
         image: "assets/images/projeto-trip.webp",
+
         imageAlt: "Imagem do projeto Assistente Virtual TRIP",
+
         liveUrl: "https://trip-red.vercel.app/",
+
         githubUrl: "https://github.com/CHAT-TRIP/TRIP"
     },
+
+    {
+        title: "Landing Page<br>Dra do Laser",
+
+        description:
+            "Landing page desenvolvida em WordPress utilizando Elementor Pro para campanhas de captação de leads do Método 4K. Atuei na implementação da interface, responsividade, integração com formulários, otimização da experiência do usuário e configuração de eventos utilizando Google Tag Manager e Google Analytics.",
+
+        image: "assets/images/projeto-dradolaser.webp",
+
+        imageAlt: "Landing Page Dra do Laser",
+
+        liveUrl: "https://lp.dradolaserm4k.com.br/capturam4k-maio/",
+
+        githubUrl: ""
+    }
 ];
 
 let currentProjectIndex = 0;
@@ -24,12 +45,12 @@ const nextProjectButton = document.querySelector("#next-project");
 function updateProjectLink(element, url) {
     const hasValidUrl = Boolean(url && url !== "#");
 
-    element.hidden = !hasValidUrl;
-
     if (hasValidUrl) {
+        element.style.display = "inline-flex";
         element.href = url;
         element.setAttribute("aria-disabled", "false");
     } else {
+        element.style.display = "none";
         element.removeAttribute("href");
         element.setAttribute("aria-disabled", "true");
     }
